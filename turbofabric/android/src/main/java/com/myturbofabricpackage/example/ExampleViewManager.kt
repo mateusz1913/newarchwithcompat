@@ -6,9 +6,16 @@ import com.facebook.react.module.annotations.ReactModule
 import com.facebook.react.uimanager.ThemedReactContext
 import com.facebook.react.uimanager.ViewGroupManager
 import com.facebook.react.uimanager.annotations.ReactProp
+import com.facebook.react.viewmanagers.ExampleViewManagerDelegate
+import com.facebook.react.viewmanagers.ExampleViewManagerInterface
 
 @ReactModule(name = ExampleView.NAME)
-class ExampleViewManager : ViewGroupManager<ExampleView>() {
+class ExampleViewManager : ViewGroupManager<ExampleView>(),
+    ExampleViewManagerInterface<ExampleView> {
+    private var mDelegate = ExampleViewManagerDelegate(this);
+
+    override fun getDelegate() = mDelegate
+
     override fun getName() = ExampleView.NAME
 
     override fun createViewInstance(reactContext: ThemedReactContext): ExampleView {
@@ -16,7 +23,7 @@ class ExampleViewManager : ViewGroupManager<ExampleView>() {
     }
 
     @ReactProp(name = "colors")
-    fun setColors(view: ExampleView, colors: ReadableArray?) {
+    override fun setColors(view: ExampleView, colors: ReadableArray?) {
         if (colors == null) {
             return
         }
@@ -24,7 +31,7 @@ class ExampleViewManager : ViewGroupManager<ExampleView>() {
     }
 
     @ReactProp(name = "locations")
-    fun setLocations(view: ExampleView, locations: ReadableArray?) {
+    override fun setLocations(view: ExampleView, locations: ReadableArray?) {
         if (locations == null) {
             return
         }
@@ -32,7 +39,7 @@ class ExampleViewManager : ViewGroupManager<ExampleView>() {
     }
 
     @ReactProp(name = "centerPoint")
-    fun setCenterPoint(view: ExampleView, centerPoint: ReadableMap?) {
+    override fun setCenterPoint(view: ExampleView, centerPoint: ReadableMap?) {
         if (centerPoint == null) {
             return
         }

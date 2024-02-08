@@ -14,5 +14,13 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*"
+  },
+  "codegenConfig": {
+    "name": "MyTurboFabricPackage",
+    "type": "all",
+    "jsSrcsDir": "src",
+    "android": {
+      "javaPackageName": "com.myturbofabricpackage"
+    }
   }
 }

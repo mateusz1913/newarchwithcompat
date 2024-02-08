@@ -1,12 +1,15 @@
-import type { ViewProps } from 'react-native';
-import { requireNativeComponent } from 'react-native';
+import type { ColorValue, HostComponent, ViewProps } from 'react-native';
+import type { Double } from 'react-native/Libraries/Types/CodegenTypes';
+import codegenNativeComponent from 'react-native/Libraries/Utilities/codegenNativeComponent';
 
 export interface ExampleViewProps extends ViewProps {
-  colors: number[];
-  locations: number[];
-  centerPoint?: { x: number; y: number };
+  colors: ColorValue[];
+  locations: Double[];
+  centerPoint?: { x: Double; y: Double };
 }
 
-const nativeComponent = requireNativeComponent<ExampleViewProps>('ExampleView');
+export type ExampleViewComponent = HostComponent<ExampleViewProps>;
 
-export default nativeComponent;
+export default codegenNativeComponent<ExampleViewProps>(
+  'ExampleView',
+) as ExampleViewComponent;

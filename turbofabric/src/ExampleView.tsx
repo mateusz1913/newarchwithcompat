@@ -9,7 +9,7 @@ const ExampleView = (
     colors: ReadonlyArray<ColorValue>;
   },
 ) => {
-  const colors = props.colors.map(processColor) as number[];
+  const colors = props.colors.map(processColor) as ColorValue[];
   return <ExampleViewNativeComponent {...props} colors={colors} />;
 };
 
