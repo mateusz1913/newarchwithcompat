@@ -7039,6 +7039,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"my-turbofabric-library@npm:0.0.1, my-turbofabric-library@workspace:turbofabric":
+  version: 0.0.0-use.local
+  resolution: "my-turbofabric-library@workspace:turbofabric"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  languageName: unknown
+  linkType: soft
+
 "natural-compare-lite@npm:^1.4.0":
   version: 1.4.0
   resolution: "natural-compare-lite@npm:1.4.0"
@@ -7083,6 +7092,7 @@ __metadata:
     babel-jest: "npm:^29.6.3"
     eslint: "npm:^8.19.0"
     jest: "npm:^29.6.3"
+    my-turbofabric-library: "npm:0.0.1"
     prettier: "npm:2.8.8"
     react: "npm:18.2.0"
     react-native: "npm:0.73.4"

@@ -1,0 +1,18 @@
+{
+  "name": "my-turbofabric-library",
+  "private": true,
+  "version": "0.0.1",
+  "description": "My awesome package",
+  "react-native": "src",
+  "source": "src",
+  "main": "src",
+  "module": "src",
+  "repository": "<repository-url>",
+  "author": "<author>",
+  "license": "MIT",
+  "homepage": "<homepage-url>",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  }
+}

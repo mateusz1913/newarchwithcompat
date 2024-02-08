@@ -2,6 +2,9 @@
   "name": "newarchwithcompat",
   "version": "0.0.1",
   "private": true,
+  "workspaces": [
+    "turbofabric"
+  ],
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -10,6 +13,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "my-turbofabric-library": "0.0.1",
     "react": "18.2.0",
     "react-native": "0.73.4"
   },
